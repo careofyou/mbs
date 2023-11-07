@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 640px) {
+  .background-gradient::before {
+    background: radial-gradient(
+      30% 30% at 60% 40%,
+      rgba(126, 34, 206, 0.33) 0%,
+      rgba(37, 38, 44, 0) 100%
+    );
+    z-index: -10;
+    content: "";
+    position: absolute;
+    inset: 0px;
+    transform: scale(1);
+    pointer-events: none;
+  }
+}
+
+#nprogress .bar {
+  @apply first:bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500;
+}
+
+
+
+@supports not (backdrop-filter: none) {
+  .header {
+    @apply bg-opacity-90 backdrop-blur-none dark:bg-opacity-90;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: theme('colors.gray.700') !important;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  @apply text-gray-700 dark:text-blue-300;
+}
+
+
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.token.punctuation {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.token.parameter,
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-green-700 dark:text-green-300;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-pink-700 dark:text-pink-300;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  @apply text-yellow-700 dark:text-yellow-300;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply text-purple-700 dark:text-purple-300;
+}
+
+.token.function,
+.token.class-name {
+  @apply text-indigo-700 dark:text-indigo-300;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-yellow-700 dark:text-yellow-300;
+}
+
+html {
+  overflow-y: overlay;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
